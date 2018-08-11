@@ -20,6 +20,8 @@ def ask_choice():
     lst = [int(x) for x in list (dic)]
     file.close
     inputNum = int(input("Enter Number: "))
+    if inputNum < 5000 or inputNum > 7000:
+        raise ValueError("Entered number must be in range 5000-7000")
     for i in lst:
         for j in lst:
             if (i+j == inputNum) and  (i !=j):
