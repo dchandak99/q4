@@ -2,10 +2,10 @@ import csv
 import numpy as np
 days = []
 nights = []
-readfile = csv.reader(open('info_day.csv'),delimiter=',')
+readfile = csv.reader(open('info_day.csv'),delimiter=',',skipinitialspace = True)
 for rows in readfile:
     days.append(rows)
-readfile = csv.reader(open('info_night.csv'),delimiter=',')
+readfile = csv.reader(open('info_night.csv'),delimiter=',',skipinitialspace = True)
 for rows in readfile:
     nights.append(rows)
 
@@ -21,7 +21,7 @@ for x in range(1,5):
     final.append(days[x])
     final.append(nights[x])
 final= (np.array(final)).transpose()
-
-writefile = csv.writer(open('info_combine.csv','w'),delimiter=',')
+final = [['{0: <18}'.format(x) for x in y] for y in final] 
+writefile = csv.writer(open('info_combine.csv','w'),quoting=csv.QUOTE_NONE,delimiter='\t')
 writefile.writerows(final)
-print (final)
+

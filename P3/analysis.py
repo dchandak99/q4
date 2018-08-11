@@ -22,8 +22,12 @@ std = []
 for x in alldata:
     mean.append(np.mean(x))
     std.append(np.std(x))
-print ("Field      " ,"Mean    ","Std. Dev.")
-print ("Temperature" ,mean[0],std[0])
-print ("Humidity   " ,mean[1],std[1])
-print ("Light      " ,mean[2],std[2])
-print ("CO2        " ,mean[3],std[3])
+
+mean = ['{0:<20}'.format(str(x)) for x in mean]
+std = ['{0:<20}'.format(str(x)) for x in std]
+
+print ('{0:<20}'.format("Field") ,'{0:<20}'.format("Mean"),'{0:<20}'.format("Std. Dev."))
+print ('{0:<20}'.format("Temperature") ,mean[0],std[0])
+print ('{0:<20}'.format("Humidity") ,mean[1],std[1])
+print ('{0:<20}'.format("Light") ,mean[2],std[2])
+print ('{0:<20}'.format("CO2") ,mean[3],std[3])
