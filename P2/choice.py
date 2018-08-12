@@ -32,6 +32,7 @@ def ask_choice():
             if (i+j < inputNum) and  (i !=j):
                 print (dic[i],i,dic[j],j)
                 return
+    print ("Not Possible")
     return
             
 if __name__ == "__main__":
