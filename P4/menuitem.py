@@ -24,13 +24,3 @@ class MenuItem(object):
 
     def __repr__(self):
         return str(self)
-
-
-def main():
-    a = MenuItem("Chicken Zinger", 200, 4.8)
-    b = MenuItem("Chicken Popcorn", 100, 4.7)
-    print(a==b)
-
-
-if __name__=="__main__":
-    main()
